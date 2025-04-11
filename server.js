@@ -16,13 +16,14 @@ const loginRoute = require('./routes/login');
 const userRoute = require('./routes/user');
 const profileRoute = require('./routes/profile');
 const achievementsRoute = require('./routes/achievements');
+const adminRoute = require('./routes/admin')
 
 app.use('/api/register', registerRoute);
 app.use('/api/login', loginRoute);
 app.use('/api/user', userRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/achievements', achievementsRoute);
-
+app.use('/api/admin', adminRoute);
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
