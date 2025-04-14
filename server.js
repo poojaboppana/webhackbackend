@@ -31,6 +31,10 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 .then(() => console.log('✅ MongoDB connected'))
 .catch((err) => console.error('❌ MongoDB error:', err));
+app.get('/test', async (req, res) => {
+  const users = await Registration.find({});
+  res.json(users);
+});
 
 // Start server
 const PORT = process.env.PORT || 5000;
